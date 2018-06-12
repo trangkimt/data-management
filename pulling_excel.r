@@ -21,7 +21,7 @@ library(readxl)
 dat_input <- "../.."
 
 ## Get the list of filenames
-filenames <- list.files(path="../yourfilepath",pattern="*.xlsx")
+filenames <- list.files(path=dat_input,pattern="*.xlsx")
 
 ## Function to combine files
 combined_files <- function(filenames) {
