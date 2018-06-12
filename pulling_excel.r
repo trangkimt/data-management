@@ -28,7 +28,7 @@ combined_files <- function(filenames) {
     combined_df <- tibble()
     for (i in 1:length(filenames)) {
         cat("Currently working on file:",i,"\n") # Print progress
-        df <- excel_sheets(path=paste0(dat_input,'/',filenames[i])) %>% # Read in data set
+        df <- excel_sheets(path=paste0(dat_input,'/',filenames[i])) %>% # Read in data file
             purrr::set_names() %>%
             purrr::map_df(~read_excel(path=paste0(dat_input,'/',filenames[i]) # Map over sheets
                                     ,sheet=.x,
