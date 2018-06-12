@@ -18,7 +18,7 @@ library(tidyverse)
 library(readxl)
 
 ## Create relative directories
-dat_input <- "../../KRR School Data/Fidelity/Family Engagement/2017-18 Fidelity/Fall 2017 Raw"
+dat_input <- "../.."
 
 ## Get the list of filenames
 filenames <- list.files(path="../yourfilepath",pattern="*.xlsx")
