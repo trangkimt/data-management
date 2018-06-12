@@ -18,7 +18,7 @@ library(tidyverse)
 library(readxl)
 
 ## Create relative directories
-dat_input <- "../.."
+dat_input <- "../../" # Your path name
 
 ## Get the list of filenames
 filenames <- list.files(path=dat_input,pattern="*.xlsx")
@@ -36,14 +36,13 @@ combined_files <- function(filenames) {
                                     col_names=c('Item','Rating'), # Input column names
                                     col_types = c("text","text")), # Column types
                                     .id="Session") %>% # Name of tabs
-            filter(Session!='SUMMARY'&!is.na(FidItem)&Rating) # Filter out types of data
+            filter(Session!='SUMMARY'&!is.na(Item)) # Filter out types of data
         schoolname <- str_split(filenames[i],'-') # Create a school name by splitting filename
         df$SCHOOLN <- paste0(schoolname[[1]][2],schoolname[[1]][3]) # Create a school variable
         combined_df <- bind_rows(combined_df,df) # Combine data sets together
     }
     combined_df
 }
-
 
 ## Combine files
 df_original <- combined_files(filenames)
