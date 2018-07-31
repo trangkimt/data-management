@@ -38,7 +38,7 @@ for (id in sort(unique(dat$ID))) {
                   position="stack",color="gray20",size=6,hjust = 0.5, vjust = 1.5)
         ggtitle(paste0(id,'-',unique(dat[which(dat$ID==id),'NAME']),' - TITLE')) + # Title of plot that includes id number
         theme_minimal() + # Type of plot theme
-        theme(axis.title.x=element_blank(), # Theme elements
+        theme(axis.title.x=element_blank(), # Theme elements: can add or remove axes title, text, legend, etc. 
               axis.text.x=element_blank(),
               axis.ticks.x=element_blank(),
               axis.title.y=element_blank(),
