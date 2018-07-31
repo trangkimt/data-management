@@ -50,4 +50,4 @@ for (id in sort(unique(dat$ID))) {
     dev.off() # Turns off process
 }
 
-## Plots should print to your you had the dat_output value
+## Plots should print to where you had the dat_output value
