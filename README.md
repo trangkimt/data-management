@@ -1,3 +1,5 @@
 # Data Management
 
-I learned data management skills working as a program evaluator for a state-wide reading intervention program. We worked with 60+ schools/sites. So there was a huge amount of data to collect, manage, and clean. This project contains scripts for tasks that I encountered often while dealing with messy data. 
+I learned data management and cleaning skills working in various roles, handling unstructured and structured data. In one role, I worked directly with 50+ schools to standardize the data collection process, write code to read and process unstructured data, as well as run quality control checks. 
+
+This project database contains scripts for various tasks that I encountered often while dealing with messy data. There are scripts for R, SAS, and Python, as I had to use different programs depending on my role.  
