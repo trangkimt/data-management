@@ -64,7 +64,7 @@ proc format;
         		other="13+";
 run;
 
-/***********STEP 6: Prepare final data set*******************************/
+/***********STEP 6: Prepare and export final data set*********************/
 data dat_final(rename=(v1_r=v1 v2_r=v2 v3_r=v3));
 	set merge_recode;
 	keep v1 v2 v3;
@@ -90,16 +90,6 @@ proc freq data=dat_final;
 	tables v1*v2/nocum nopercent nocol norow;
 	by v1;
 run; 
-
-/************STEP 7: Export data set*************************************/
-
-proc export 
-	data=dat_final dbms=csv outfile="&out/filename_final.csv" replace;
-run; 
-
-
-
-
 
 
 
