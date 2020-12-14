@@ -91,13 +91,3 @@ proc freq data=dat_final;
 	by v1;
 run; 
 
-
-
-
-
-
-
-
-
-
-
