@@ -30,7 +30,7 @@ dat4 <- group_by(dat3,id) %>%
             s_var2=max(var2))
 
 ###join existing file with another file 
-comp <- left_join(dat3,file,by=c("var")) 
+comp <- left_join(dat4,file,by=c("var")) 
 
 comp <- select(comp,var,var2,var3) #select variables of interest
 
@@ -45,11 +45,11 @@ comp$r_var[which(comp$var=="MO")] <- "Missouri"
 comp$r_ag <- "Unknown"
 comp$r_ag[comp$ag<=11] <- "Less than 12"
 
-########STEP 4: Select final file for export######
+########STEP 4: Export file######
 colnames(comp)
 final <- select(comp,r_var,r_ag,var3,var4)
 
-#rite out file
+#write out file
 write_xlsx(comp,paste0("folder/filename",date,".xlsx"))
 
 
