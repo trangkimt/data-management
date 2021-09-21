@@ -32,8 +32,6 @@ dat4 <- group_by(dat3,id) %>%
 ###join existing file with another file 
 comp <- left_join(dat4,file,by=c("var")) 
 
-comp <- select(comp,var,var2,var3) #select variables of interest
-
 ###Recode data and add columns
 tab <- table(comp$var) #view what's available for the variable
 tab
@@ -47,7 +45,7 @@ comp$r_ag[comp$ag<=11] <- "Less than 12"
 
 ########STEP 4: Export file######
 colnames(comp)
-final <- select(comp,r_var,r_ag,var3,var4)
+final <- select(comp,r_var,r_ag,var3,var4) #select variables of interest
 
 #write out file
 write_xlsx(comp,paste0("folder/filename",date,".xlsx"))
