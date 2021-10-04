@@ -70,6 +70,12 @@ data dat_final(rename=(v1_r=v1 v2_r=v2 v3_r=v3));
 	keep v1 v2 v3;
 run; 
 
+proc sql;
+	create table dat_final as
+	select v1, v2, v3
+	from merge_recode;
+run; 
+
 /* Export data set */
 proc export data=dat_final outfile="&out/filename_clean.csv"
 	dbms=csv replace;
